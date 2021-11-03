@@ -11,6 +11,6 @@ RUN curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
 RUN python3 get-pip.py
 RUN pip install jupyterlab
 
-RUN cargo install evcxr_jupyter
-USER 1000:1000
+RUN cargo install evcxr_jupyter cargo-edit
+# USER 1000:1000
 RUN evcxr_jupyter --install
