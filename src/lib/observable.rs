@@ -4,7 +4,6 @@ use ndarray::Array;
 use num_complex::Complex;
 
 pub struct Observable {
-    n_qubits: u32,
     operator: Array2<Complex<f32>>,
 }
 
@@ -13,7 +12,6 @@ impl Observable {
         let nn: usize = usize::try_from(2_i32.pow(n_qubits)).unwrap();
 
         Observable {
-            n_qubits,
             operator: Array::ones((nn, nn)),
         }
     }

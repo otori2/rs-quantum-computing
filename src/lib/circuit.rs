@@ -2,19 +2,17 @@ use crate::gate::gate_base::Gate;
 use crate::state::QuantumState;
 
 pub struct QuantumCircuit {
-    n_qubits: u32,
     // gates: Vec<Rc<dyn Gate>>,
     gates: Vec<Box<dyn Gate>>,
 }
 
-impl QuantumCircuit {
-    pub fn new(n_qubits: u32) -> Self {
-        QuantumCircuit {
-            n_qubits,
-            gates: vec![],
-        }
+impl Default for QuantumCircuit {
+    fn default() -> Self {
+        QuantumCircuit { gates: vec![] }
     }
+}
 
+impl QuantumCircuit {
     pub fn add_gate(&mut self, gate: Box<dyn Gate>) {
         self.gates.push(gate);
     }

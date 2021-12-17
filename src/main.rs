@@ -41,7 +41,7 @@ fn main() {
     let H0 = Box::new(HGate::new(0));
     let H1 = Box::new(HGate::new(1));
 
-    let mut circuit = QuantumCircuit::new(n_qubits);
+    let mut circuit = QuantumCircuit::default();
     // circuit.add_gate(H0);
     circuit.add_gate(H1);
     circuit.update_quantum_state(&mut state);
