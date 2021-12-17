@@ -5,7 +5,7 @@ FROM mcr.microsoft.com/vscode/devcontainers/rust:1-${VARIANT}
 
 # [Optional] Uncomment this section to install additional packages.
 RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
-    && apt-get -y install --no-install-recommends jupyter-notebook jupyter cmake
+    && apt-get -y install --no-install-recommends jupyter-notebook jupyter cmake libopenblas-dev
 
 RUN curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
 RUN python3 get-pip.py

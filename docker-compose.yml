@@ -1,6 +1,6 @@
 version: '3'
 services:
-  rust-sample:
+  rs-quantum-simulator:
     build:
       context: .
       dockerfile: ./.devcontainer/Dockerfile
@@ -16,4 +16,5 @@ services:
       - seccomp:unconfined
     ports:
       - "${JUPYTER_PORT}:8888"
-    command: jupyter lab --ip=0.0.0.0 --allow-root --NotebookApp.token='' --port=8888 --notebook-dir /workspace
+    command: jupyter lab --ip=0.0.0.0 --allow-root --NotebookApp.token=''
+      --port=8888 --notebook-dir /workspace

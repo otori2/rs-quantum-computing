@@ -1,8 +1,21 @@
 [package]
-name = "hello_remote_world"
+name = "rs-quantum-simulator"
 version = "0.1.0"
 authors = ["VS Code <vscode@microsoft.com>"]
+edition = "2021"
 
 [lib]
-path ="./src/lib/lib.rs"
+path = "./src/lib/lib.rs"
 
+[features]
+
+[dependencies]
+async-trait = "0.1.51"
+futures = "0.3.17"
+ndarray = { version = "0.15.0", features = ["blas"] }
+blas-src = { version = "0.8", features = ["openblas"] }
+openblas-src = { version = "0.10", features = ["cblas", "system"] }
+ndarray-linalg = "0.14.1"
+num-complex = "0.4.0"
+rand = "0.8.4"
+itertools = "0.10.3"
